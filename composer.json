@@ -1,0 +1,20 @@
+{
+    "name": "stadem/microframework",
+    "type": "library",
+    "description": "microframework",
+    "keywords": ["microframework"],
+    "homepage": "https://stadem.com",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "authors": [
+        {
+            "name": "Stavros Dem",
+            "email": "stadem10@gmail.com",
+            "homepage": "http://stadem.com",
+            "role": "Developer"
+        }
+    ],
+}
