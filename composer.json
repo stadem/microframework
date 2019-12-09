@@ -5,10 +5,9 @@
     "keywords": ["microframework"],
     "homepage": "https://stadem.com",
     "license": "MIT",
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.6.0"
-    },
+	"require": {
+		"php": ">=7.1"
+	},
     "authors": [
         {
             "name": "Stavros Dem",
