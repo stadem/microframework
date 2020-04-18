@@ -4,6 +4,7 @@ namespace microframework\Tools;
 class UrlManagment{
 
 	public function whitelistIPs($ips){
+		/*
 		$whitelist = $ips;
 		if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
 			if(empty($_SERVER['HTTP_X_FORWARDED_PROTO']) || $_SERVER['HTTP_X_FORWARDED_PROTO'] == "http"){
@@ -14,7 +15,18 @@ class UrlManagment{
 				exit();
 			}
 
-		}
+		}*/
+	}
+
+
+	public function EnableHttpS(){	
+			if(empty($_SERVER['HTTP_X_FORWARDED_PROTO']) || $_SERVER['HTTP_X_FORWARDED_PROTO'] == "http"){
+				$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	// header('HTTP/1.1 301 Moved Permanently');
+				// echo $redirect;
+				header('Location: ' . $redirect);
+				exit();
+			}
 	}
 
 	public function removeWWW(){
@@ -34,14 +46,14 @@ class UrlManagment{
 	public function isLocal($urls){
 		// print_r($urls);
 
-		$is_local = (
-			$_SERVER["HTTP_HOST"]=="127.0.0.1" ||
-			$_SERVER["HTTP_HOST"]=="localhost" ||
-			$_SERVER["HTTP_HOST"]=="192.168.2.5" ||
-			$_SERVER["HTTP_HOST"]=="192.168.2.4" ||
-			$_SERVER["HTTP_HOST"]=="192.168.2.3" ||
-			$_SERVER["HTTP_HOST"]=="192.168.1.5" 
-		);
+		// $is_local = (
+		// 	$_SERVER["HTTP_HOST"]=="127.0.0.1" ||
+		// 	$_SERVER["HTTP_HOST"]=="localhost" ||
+		// 	$_SERVER["HTTP_HOST"]=="192.168.2.5" ||
+		// 	$_SERVER["HTTP_HOST"]=="192.168.2.4" ||
+		// 	$_SERVER["HTTP_HOST"]=="192.168.2.3" ||
+		// 	$_SERVER["HTTP_HOST"]=="192.168.1.5" 
+		// );
 
 		$url = 'https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 
